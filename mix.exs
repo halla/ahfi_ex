@@ -19,7 +19,7 @@ defmodule AhfiEx.Mixfile do
   def application do
     [mod: {AhfiEx, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex ]]
   end
 
   # Specifies which paths to compile per environment.

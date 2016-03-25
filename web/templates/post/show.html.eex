@@ -1,0 +1,26 @@
+
+
+<div class="container article">
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= @post.title %></h1>
+
+      <%= @post.body %>
+
+      <div class="related-posts">
+          prev-post next-post
+      </div>
+      <div id="comments">
+        COMMENTS
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="date_published"><%= @post.date_published %></div>
+    </div>
+  </diV>
+</div>
+
+
+
+<%= link "Edit", to: post_path(@conn, :edit, @post) %>
+<%= link "Back", to: post_path(@conn, :index) %>

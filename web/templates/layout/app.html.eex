@@ -1,25 +1,34 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Refactoring code and thoughts. Adapting to environments. Meta-hopping with mind maps.">
+        <meta name="author" content="Antti Halla">
+
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300italic,300,400,500" media="all"/>
+        <link type="text/css" rel="stylesheet" href="/static/bootstrap-3.2.0-dist/css/bootstrap.min.css" media="all"/>
+        <link type="text/css" rel="stylesheet" href="/static/style.css" media="all"/>
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+        <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/mousetrap.min.js">
+        </script>
+        <title>Antti Halla</title></head><body><!-- Google Tag Manager -->
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Hello AhfiEx!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
-
   <body>
     <div class="container">
+     <header id="header" class="header"><div class="container"><div class="row"><div class="col-md-10"><h2><a href="/" class="site-title">Antti Halla —  Web &amp; Data</a></h2></div></div></div></header>
+
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
           </ul>
         </nav>
-        <span class="logo"></span>
+
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -30,6 +39,39 @@
       </main>
 
     </div> <!-- /container -->
+    <div id="footer">
+  <div class="container">
+    <ul class="list-inline">
+      <li>
+        <a href="/">Home</a>
+      </li>
+
+      <li>
+        <a href="http://www.anywheris.com/">Company</a>
+      </li>
+      <li>
+        <a class="follow twitter" href="http://twitter.com/AnttiHalla">Twitter</a>
+      </li>
+      <li>
+        <a class="follow linkedin" href="http://fi.linkedin.com/pub/antti-halla/0/283/129">LinkedIn</a>
+      </li>
+      <li>
+        <a class="follow rss" href="/blog/feeds/rss/">Rss</a>
+      </li>
+      <li>
+        <a href="http://mindonmaps.com">Mind maps</a>
+      </li>
+      <li>
+        <a href="http://www.anywhereism.net">Nomad life</a>
+      </li>
+      <li>
+        <a href="http://about.me/antti.halla">About</a>
+      </li>
+    </ul>
+    Antti Halla 2016
+  </div>
+</div>
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

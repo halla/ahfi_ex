@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 config :ahfi_ex, AhfiEx.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "R00tsql.",
   database: "ahfi_ex_dev",
   hostname: "localhost",
   pool_size: 10
