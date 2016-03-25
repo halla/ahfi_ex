@@ -8,7 +8,12 @@
       <%= (Earmark.to_html @post.body) |> raw %>
 
       <div class="related-posts">
-          prev-post next-post
+          <%= if @prevPost do %>
+          <%= link ("← " <> @prevPost.title), class: "prev-post", to: ("/post/" <> to_string @prevPost.id) %>
+          <% end %>
+          <%= if @nextPost do %>
+          <%= link (@nextPost.title <> " →"), class: "next-post", to: ("/post/" <> to_string @nextPost.id) %>
+          <% end %>
       </div>
       <div id="comments">
         COMMENTS
@@ -19,7 +24,6 @@
     </div>
   </diV>
 </div>
-
 
 
 <%= link "Edit", to: post_path(@conn, :edit, @post) %>
