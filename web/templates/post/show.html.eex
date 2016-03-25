@@ -5,7 +5,7 @@
     <div class="col-md-9">
       <h1><%= @post.title %></h1>
 
-      <%= @post.body %>
+      <%= (Earmark.to_html @post.body) |> raw %>
 
       <div class="related-posts">
           prev-post next-post
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="date_published"><%= @post.date_published %></div>
+      <div class="date_published"><%= Ecto.DateTime.to_date @post.date_published %></div>
     </div>
   </diV>
 </div>

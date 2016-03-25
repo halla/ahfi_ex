@@ -5,10 +5,15 @@
         <div class="intro">
 
           <p>The web is my platform.</p> <p>
-         I've been experimenting with a range of technologies to create software for the web. Besides helping me think and learn &ndash; and paying my bills &ndash; it enabled me to say goodbye to the cubicle and explore the world.
+         I've been experimenting with a range of technologies to create software for the web. Besides helping me think and learn &mdash; and paying my bills &mdash; it enabled me to say goodbye to the cubicle and explore the world.
 </p></div>
         <h2>Articles </h2>
-        @(list-posts)
+        <ul class="list-unstyled blog-list-simple">
+        <%= for post <- @posts do %>
+            <li><%= link post.title, to: ("/post/" <> to_string post.id) %></li>
+        <% end %>
+        </ul>
+
       </div>
       <div class="col-md-4 other-sites">
         <h2>My sites</h2>
