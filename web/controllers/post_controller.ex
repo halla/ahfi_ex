@@ -1,12 +1,13 @@
 defmodule AhfiEx.PostController do
   use AhfiEx.Web, :controller
+  use Timex
 
   alias AhfiEx.Post
 
   plug :scrub_params, "post" when action in [:create, :update]
 
   def index(conn, _params) do
-    posts = Repo.all(Post)
+    posts = Repo.all(from p in Post, order_by: [desc: p.date_published] )
     render(conn, "index.html", posts: posts)
   end
 
@@ -43,9 +44,16 @@ defmodule AhfiEx.PostController do
     render(conn, "show.html", post: post, nextPost: nextPost, prevPost: prevPost)
   end
 
+  def view(conn, %{"slug" => slug}) do
+      post = Repo.get_by!(Post, slug: slug)
+      show(conn, %{ "id" => post.id})
+  end
+
   def edit(conn, %{"id" => id}) do
     post = Repo.get!(Post, id)
+
     changeset = Post.changeset(post)
+
     render(conn, "edit.html", post: post, changeset: changeset)
   end
 
@@ -73,5 +81,10 @@ defmodule AhfiEx.PostController do
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
+  end
+
+  def rss(conn, _params) do
+      posts = Repo.all(from p in Post, limit: 10, order_by: [desc: p.date_published] )
+      render(conn, "rss.xml", posts: posts)
   end
 end

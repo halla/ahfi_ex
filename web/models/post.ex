@@ -5,7 +5,8 @@ defmodule AhfiEx.Post do
     field :title, :string
     field :body, :string
     field :slug, :string
-    field :date_published, Ecto.DateTime
+    field :date_published, Timex.Ecto.DateTime # show needs
+    #field :date_published, Ecto.DateTime  # edit form needs now..
 
     #timestamps
   end

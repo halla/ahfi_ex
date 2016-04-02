@@ -17,6 +17,8 @@ defmodule AhfiEx.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/blog/feeds/rss/", PostController, :rss
+    get "/blog/:year/:month/:slug/", PostController, :view
     resources "/post", PostController
   end
 

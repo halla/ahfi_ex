@@ -19,7 +19,8 @@ defmodule AhfiEx.Mixfile do
   def application do
     [mod: {AhfiEx, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex ]]
+                    :phoenix_ecto, :postgrex, :timex, :timex_ecto,
+                    :calendar, :calecto, :phoenix_calendar  ]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +38,12 @@ defmodule AhfiEx.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:earmark, "> 0.2.0" }]
+     {:earmark, "> 0.2.0" },
+     {:timex, "~> 2.1.1"},
+     {:timex_ecto, "~> 1.0.3"},
+     {:phoenix_calendar, "~> 0.1.2"},
+     {:calecto, "~> 0.5.2"},
+     {:calendar, "~> 0.13"},]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

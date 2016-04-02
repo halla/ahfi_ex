@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="date_published"><%= Ecto.DateTime.to_date @post.date_published %></div>
+      <div class="date_published"><%= format_date @post.date_published %></div>
     </div>
   </diV>
 </div>
