@@ -18,6 +18,14 @@ defmodule AhfiEx.PostView do
       end
   end
 
+  def year(post) do
+      "2020"
+  end
+
+  def month(post) do
+      "02"
+  end
+
   def rss_date(datetime) do
       Timex.format(datetime, "{RFC822}")
       |> case do
@@ -30,5 +38,9 @@ defmodule AhfiEx.PostView do
     conn
     |> Map.from_struct()
     |> Map.keys()
+  end
+
+  def disqus_shortname do
+      Application.get_env(:ahfi_ex, :disqus)[:shortname]
   end
 end
