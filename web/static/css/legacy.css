@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'gandhi_serif';
-    src: url('gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.eot');
-    src: url('gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.woff') format('woff'),
-         url('gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.ttf') format('truetype'),
-         url('gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.svg#gandhi_serifregular') format('svg');
+    src: url('../fonts/gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.eot');
+    src: url('../fonts/gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.woff') format('woff'),
+         url('../fonts/gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/gandhiserif/gandhiserif_regular_macroman/GandhiSerif-Regular-webfont.svg#gandhi_serifregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'gandhi_serif';
-    src: url('gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.eot');
-    src: url('gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.woff') format('woff'),
-         url('gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.ttf') format('truetype'),
-         url('gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.svg#gandhi_serifbold') format('svg');
+    src: url('../fonts/gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.eot');
+    src: url('../fonts/gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.woff') format('woff'),
+         url('../fonts/gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/gandhiserif/gandhiserif_bold_macroman/GandhiSerif-Bold-webfont.svg#gandhi_serifbold') format('svg');
     font-weight: bold;
     font-style: bold;
 
@@ -24,11 +24,11 @@
 
 @font-face {
     font-family: 'gandhi_serif';
-    src: url('gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.eot');
-    src: url('gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.woff') format('woff'),
-         url('gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.ttf') format('truetype'),
-         url('gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.svg#gandhi_serifitalic') format('svg');
+    src: url('../fonts/gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.eot');
+    src: url('../fonts/gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.woff') format('woff'),
+         url('../fonts/gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/gandhiserif/gandhiserif_italic_macroman/GandhiSerif-Italic-webfont.svg#gandhi_serifitalic') format('svg');
     font-weight: normal;
     font-style: italic;
 }
