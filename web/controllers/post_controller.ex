@@ -41,7 +41,14 @@ defmodule AhfiEx.PostController do
         order_by: [desc: p.date_published],
         limit: 1
     prevPost = Repo.one(query2)
-    render(conn, "show.html", post: post, nextPost: nextPost, prevPost: prevPost)
+    render(conn,
+        "show.html",
+
+        post: post,
+        metaTitle: post.title,
+        metaDescription: String.slice(post.body, 0, 150),
+        nextPost: nextPost,
+        prevPost: prevPost)
   end
 
   def view(conn, %{"slug" => slug}) do

@@ -4,7 +4,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="Refactoring code and thoughts. Adapting to environments. Meta-hopping with mind maps.">
+
         <meta name="author" content="Antti Halla">
 
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300italic,300,400,500" media="all"/>
@@ -13,7 +13,19 @@
         <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"/>
         <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="/static/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-        <title>Antti Halla</title>
+        <%= if @conn.assigns[:metaTitle] do %>
+            <title><%= @metaTitle %> | Antti Halla</title>
+        <%= else %>
+            <title>Antti Halla</title>
+        <%= end %>
+
+        <%= if @conn.assigns[:metaDescription] do %>
+            <meta name="description" content="<%= @metaDescription %>">
+        <%= else %>
+            <meta name="description" content="Refactoring code and thoughts. Adapting to environments. Meta-hopping with mind maps.">
+        <%= end %>
+
+
     </head>
     <body>
     <!-- Google Tag Manager -->
