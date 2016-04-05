@@ -7,7 +7,7 @@ defmodule AhfiEx.PostView do
             {:ok, content} -> content
             {:error, error } -> to_string error
       end
-      (to_string conn.scheme) <> "://" <> conn.host <> "/blog/" <> yearmonth <> slug
+      (to_string conn.scheme) <> "://" <> conn.host <> "/blog/" <> yearmonth <> slug <> "/"
   end
 
   def format_date(datetime) do
@@ -19,11 +19,19 @@ defmodule AhfiEx.PostView do
   end
 
   def year(post) do
-      "2020"
+      Timex.format(post.date_published, "{YYYY}")
+      |> case do
+          {:ok, content} -> content
+          {:error, _ } -> ""
+      end
   end
 
   def month(post) do
-      "02"
+      Timex.format(post.date_published, "{0M}")
+      |> case do
+          {:ok, content} -> content
+          {:error, _ } -> ""
+      end
   end
 
   def rss_date(datetime) do

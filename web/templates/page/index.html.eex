@@ -9,8 +9,9 @@
 </p></div>
         <h2>Articles </h2>
         <ul class="list-unstyled blog-list-simple">
+
         <%= for post <- @posts do %>
-            <li><%= link post.title, to: ("/post/" <> to_string post.id) %></li>
+            <li><%= link post.title, to: post_path(@conn, :view, AhfiEx.PostView.year(post), AhfiEx.PostView.month(post), post.slug) <> "/" %></li>
         <% end %>
         </ul>
 

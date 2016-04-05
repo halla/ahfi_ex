@@ -7,10 +7,11 @@
 
       <div class="related-posts">
           <%= if @prevPost do %>
-          <%= link ("← " <> @prevPost.title), class: "prev-post", to: ("/post/" <> to_string @prevPost.id) %>
+          <%= link ("← " <> @prevPost.title), class: "prev-post", to: post_path(@conn, :view, year(@prevPost), month(@prevPost), @prevPost.slug) <> "/" %>
           <% end %>
           <%= if @nextPost do %>
-          <%= link (@nextPost.title <> " →"), class: "next-post", to: ("/post/" <> to_string @nextPost.id) %>
+
+          <%= link (@nextPost.title <> " →"), class: "next-post", to: post_path(@conn, :view, year(@nextPost), month(@nextPost), @nextPost.slug) <> "/" %>
           <% end %>
       </div>
       <div id="comments">
