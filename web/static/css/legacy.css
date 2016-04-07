@@ -33,7 +33,7 @@
     font-style: italic;
 }
 
-body { font-size: 20px;  font-family: 'gandhi_serif', serif; background: url('/static/img/lightpaperfibers.png'); color: #222; line-height: 1.5em; }
+body { font-size: 20px;  font-family: 'gandhi_serif', serif; background: url('/images/lightpaperfibers.png'); color: #222; line-height: 1.5em; }
 
 h1 { font-size: 30px; margin: 40px 0 30px;}
 h2 { font-size: 20px; }

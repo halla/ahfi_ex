@@ -8,11 +8,9 @@
         <meta name="author" content="Antti Halla">
 
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300italic,300,400,500" media="all"/>
-        <link type="text/css" rel="stylesheet" href="/static/bootstrap-3.2.0-dist/css/bootstrap.min.css" media="all"/>
-        <link type="text/css" rel="stylesheet" href="/static/style.css" media="all"/>
+
         <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>"/>
-        <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="/static/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
         <%= if @conn.assigns[:metaTitle] do %>
             <title><%= @metaTitle %> | Antti Halla</title>
         <%= else %>
@@ -35,7 +33,7 @@
        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-       })(window,document,'script','dataLayer','');</script>
+       })(window,document,'script','dataLayer','<%= gtmcode %>');</script>
        <!-- End Google Tag Manager -->
 
 
