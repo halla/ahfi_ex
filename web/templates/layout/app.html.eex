@@ -37,7 +37,19 @@
        <!-- End Google Tag Manager -->
 
 
-     <header id="header" class="header"><div class="container"><div class="row"><div class="col-md-10"><h2><a href="/" class="site-title">Antti Halla —  Web &amp; Data</a></h2></div></div></div></header>
+     <header id="header" class="header">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-10">
+                     <h2><a href="/" class="site-title">Antti Halla —  Web &amp; Data</a></h2>
+                 </div>
+                 <div class="col-md-2">
+                     <%= if @current_user do %>
+                        <%= @current_user.username %>
+                     <%= end %>
+                 </div>
+             </div>
+             </div></header>
 
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

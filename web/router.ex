@@ -7,6 +7,7 @@ defmodule AhfiEx.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug AhfiEx.Auth, repo: AhfiEx.Repo
   end
 
   pipeline :api do
@@ -15,7 +16,8 @@ defmodule AhfiEx.Router do
 
   scope "/", AhfiEx do
     pipe_through :browser # Use the default browser stack
-
+    get "/login", UserController, :login
+    get "/logout", UserController, :logout
     get "/", PageController, :index
     get "/blog/feeds/rss/", PostController, :rss
     get "/blog/:year/:month/:slug/", PostController, :view

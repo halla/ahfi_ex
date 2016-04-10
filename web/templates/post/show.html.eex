@@ -1,4 +1,9 @@
+
 <div class="container article">
+    <%= if @current_user do %>
+        <%= link "Edit", to: post_path(@conn, :edit, @post) %>
+    <%= end %>
+
   <div class="row">
     <div class="col-md-9">
       <h1><%= @post.title %></h1>
@@ -23,7 +28,3 @@
     </div>
   </diV>
 </div>
-
-
-<%= link "Edit", to: post_path(@conn, :edit, @post) %>
-<%= link "Back", to: post_path(@conn, :index) %>
