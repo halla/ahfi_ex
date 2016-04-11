@@ -19,7 +19,7 @@ defmodule AhfiEx.Mixfile do
   def application do
     [mod: {AhfiEx, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :timex, :timex_ecto,
+                    :phoenix_ecto, :postgrex, :timex, :timex_ecto, :sqlite_ecto,
                     :calendar, :calecto, :phoenix_calendar  ]]
   end
 
@@ -42,6 +42,7 @@ defmodule AhfiEx.Mixfile do
      {:timex, "~> 2.1.1"},
      {:timex_ecto, "~> 1.0.3"},
      {:phoenix_calendar, "~> 0.1.2"},
+     {:sqlite_ecto, "~> 1.0.2"},
      {:calecto, "~> 0.5.2"},
      {:calendar, "~> 0.13"},]
   end

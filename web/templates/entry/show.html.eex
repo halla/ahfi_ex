@@ -1,0 +1,29 @@
+
+<div class="container article">
+    <%= if @current_user do %>
+        <%= link "Edit", to: entry_path(@conn, :edit, @item) %>
+    <%= end %>
+
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= @item.title %></h1>
+
+      <%= (Earmark.to_html @item.body) |> raw %>
+
+
+    </div>
+    <div class="col-md-3">
+      <div class="date_published"><%= @item.created %></div>
+    </div>
+  </diV>
+  <div class="related-posts">
+      <%= if @prevPost do %>
+      <%= link ("← " <> @prevPost.title), class: "prev-post", to: entry_path(@conn, :show, @prevPost.id)  %>
+      <% end %>
+      <%= if @nextPost do %>
+
+      <%= link (@nextPost.title <> " →"), class: "next-post", to: entry_path(@conn, :show, @nextPost.id) %>
+      <% end %>
+  </div>
+
+</div>

@@ -45,6 +45,7 @@
                  </div>
                  <div class="col-md-2">
                      <%= if @current_user do %>
+                        <%= link "Journal", to: entry_path(@conn, :index) %>
                         <%= @current_user.username %>
                      <%= end %>
                  </div>

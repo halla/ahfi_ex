@@ -22,6 +22,7 @@ defmodule AhfiEx.Router do
     get "/blog/feeds/rss/", PostController, :rss
     get "/blog/:year/:month/:slug/", PostController, :view
     resources "/post", PostController
+    resources "/entry", EntryController
   end
 
   # Other scopes may use custom stacks.

@@ -11,6 +11,7 @@ defmodule AhfiEx do
       supervisor(AhfiEx.Endpoint, []),
       # Start the Ecto repository
       supervisor(AhfiEx.Repo, []),
+      supervisor(AhfiEx.RepoJournal, []),
       # Here you could define other workers and supervisors as children
       # worker(AhfiEx.Worker, [arg1, arg2, arg3]),
     ]

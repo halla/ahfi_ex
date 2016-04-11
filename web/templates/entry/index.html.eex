@@ -1,0 +1,5 @@
+<div class="container">
+    <%= for entry <- @items do %>
+    <h2> <%= link entry.title, to: entry_path(@conn, :show, entry.id)%> </h2>
+    <% end %>
+</div>

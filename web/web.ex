@@ -20,7 +20,7 @@ defmodule AhfiEx.Web do
     quote do
       use Ecto.Schema
       use Calecto.Schema, usec: true
-      
+
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
@@ -32,6 +32,8 @@ defmodule AhfiEx.Web do
       use Phoenix.Controller
 
       alias AhfiEx.Repo
+      alias AhfiEx.RepoJournal
+
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
@@ -67,6 +69,8 @@ defmodule AhfiEx.Web do
       use Phoenix.Channel
 
       alias AhfiEx.Repo
+      alias AhfiEx.RepoJournal
+      
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
       import AhfiEx.Gettext
