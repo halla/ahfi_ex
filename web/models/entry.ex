@@ -9,12 +9,15 @@ defmodule AhfiEx.Entry do
 
       #timestamps
     end
+
     @required_fields ~w(title body created)
     @optional_fields ~w()
 
     def changeset(model, params \\ :empty) do
       model
       |> cast(params, @required_fields, @optional_fields)
+      |> validate_length(:title, min: 1)
+      |> validate_length(:body, min: 1)      
     end
 
 end
