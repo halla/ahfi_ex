@@ -39,6 +39,7 @@ defmodule AhfiEx.Web do
 
       import AhfiEx.Router.Helpers
       import AhfiEx.Gettext
+      import AhfiEx.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -61,6 +62,8 @@ defmodule AhfiEx.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import AhfiEx.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -70,7 +73,7 @@ defmodule AhfiEx.Web do
 
       alias AhfiEx.Repo
       alias AhfiEx.RepoJournal
-      
+
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
       import AhfiEx.Gettext

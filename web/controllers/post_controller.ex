@@ -1,6 +1,6 @@
 defmodule AhfiEx.PostController do
   use AhfiEx.Web, :controller
-  plug :authenticate when action in [:edit, :new, :create]
+  plug :authenticate_user when action in [:edit, :new, :create, :update]
 
   use Timex
 
@@ -8,18 +8,7 @@ defmodule AhfiEx.PostController do
 
   plug :scrub_params, "post" when action in [:create, :update]
 
-  defp authenticate(conn, _opts) do
-      if conn.assigns.current_user do
-          conn
-      else
-          conn
-          |> put_flash(:error, "You must be logged in to do that.")
-          |> redirect(to: "/")
-          |> halt()
-      end
 
-  end
-  
   def index(conn, _params) do
     posts = Repo.all(from p in Post, order_by: [desc: p.date_published] )
     render(conn, "index.html", posts: posts)
