@@ -2,6 +2,8 @@ defmodule AhfiEx.EntryController do
     use AhfiEx.Web, :controller
 
     alias AhfiEx.Entry
+    alias AhfiEx.Tag
+    alias AhfiEx.TaggedItem
 
 
     def index(conn, _params) do
@@ -23,9 +25,15 @@ defmodule AhfiEx.EntryController do
           offset: 1 # some quirk
       prevPost = RepoJournal.one(query2)
 
+      tags = RepoJournal.all(from t in TaggedItem,
+        where: t.object_id == ^post.id
+      )
+      tags = RepoJournal.preload(tags, :tag)      
+
       render(conn,
           "show.html",
           item: post,
+          tags: tags,
           nextPost: nextPost,
           prevPost: prevPost)
 
