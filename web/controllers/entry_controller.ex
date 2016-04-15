@@ -11,8 +11,9 @@ defmodule AhfiEx.EntryController do
         render(conn, "index.html", items: items)
     end
 
-    def show(conn, %{"id" => id}) do
-      post = RepoJournal.get!(Entry, id)
+    def show(conn, %{"id" => id}) do      
+      post = RepoJournal.get!(Entry, id) |> RepoJournal.preload([tags: :tag])
+
       query = from p in Entry,
           where: p.created > ^post.created,
           order_by: p.created,
@@ -25,15 +26,9 @@ defmodule AhfiEx.EntryController do
           offset: 1 # some quirk
       prevPost = RepoJournal.one(query2)
 
-      tags = RepoJournal.all(from t in TaggedItem,
-        where: t.object_id == ^post.id
-      )
-      tags = RepoJournal.preload(tags, :tag)      
-
       render(conn,
           "show.html",
           item: post,
-          tags: tags,
           nextPost: nextPost,
           prevPost: prevPost)
 

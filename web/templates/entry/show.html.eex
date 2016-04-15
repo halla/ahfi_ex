@@ -1,14 +1,16 @@
 
 <div class="container article">
+    <div class="actions">
     <%= if @current_user do %>
-        <%= link "Edit", to: entry_path(@conn, :edit, @item) %>
+        <%= link "Edit", to: entry_path(@conn, :edit, @item), class: "edit" %>
     <%= end %>
+    </div>
 
   <div class="row">
     <div class="col-md-9">
       <h1><%= @item.title %></h1>
-      <ul class="list-inline tags">
-      <%= for tag <- @tags do %>
+      <ul class="list-inline entry-tags tags">
+      <%= for tag <- @item.tags do %>
             <li><%= tag.tag.name %></li>
       <%= end %>
     </ul>
