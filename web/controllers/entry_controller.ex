@@ -11,7 +11,7 @@ defmodule AhfiEx.EntryController do
         render(conn, "index.html", items: items)
     end
 
-    def show(conn, %{"id" => id}) do      
+    def show(conn, %{"id" => id}) do
       post = RepoJournal.get!(Entry, id) |> RepoJournal.preload([tags: :tag])
 
       query = from p in Entry,
@@ -54,4 +54,22 @@ defmodule AhfiEx.EntryController do
         end
     end
 
+    def edit(conn, %{"id" => id}) do
+        entry = RepoJournal.get!(Entry, id) |> RepoJournal.preload([tags: :tag])
+        changeset = Entry.changeset(entry)
+        render conn, "edit.html", entry: entry, changeset: changeset
+    end
+
+    def update(conn, %{"id" => id, "entry" => entry_params}) do
+        entry = RepoJournal.get!(Entry, id)
+        changeset = Entry.changeset(entry, entry_params)
+        case RepoJournal.update(changeset) do
+            {:ok, entry} ->
+                conn
+                |> put_flash(:info, "Entry saved!")
+                |> redirect(to: entry_path(conn, :show, entry.id) )
+            {:error, changeset} ->
+                render conn, "edit.html", entry: entry, changeset: changeset
+        end
+    end
 end

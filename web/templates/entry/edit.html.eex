@@ -1,0 +1,1 @@
+<%= render "form.html", action: entry_path(@conn, :update, @entry), changeset: @changeset %>
