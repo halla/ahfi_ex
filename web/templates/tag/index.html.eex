@@ -1,0 +1,7 @@
+<div class="container">
+    <ul class="list-unstyled">
+    <%= for tag <- @tags do %>
+        <li><%= tag.name %></li>
+    <%= end %>
+    </ul>
+</div>

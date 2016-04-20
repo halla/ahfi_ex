@@ -1,0 +1,7 @@
+<div class="container">
+<%= form_for @changeset, @action, fn f -> %>
+    <%= text_input f, :name %>
+    <%= error_tag f, :name %>
+    <%= submit "Save" %>
+<%= end %>
+</div>
