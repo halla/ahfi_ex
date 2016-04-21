@@ -9,6 +9,10 @@ defmodule AhfiEx.TagController do
         render conn, "index.html", tags: tags
     end
 
+    def list(conn, _params) do
+        tags = RepoJournal.all(from t in Tag, order_by: t.name)
+        render conn, "list.json", data: tags
+    end
 
     def new(conn, _params) do
         changeset = Tag.changeset(%Tag{})
@@ -37,6 +41,5 @@ defmodule AhfiEx.TagController do
         end
 
     end
-
-
+    
 end

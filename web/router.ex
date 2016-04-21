@@ -22,6 +22,7 @@ defmodule AhfiEx.Router do
     get "/blog/feeds/rss/", PostController, :rss
     get "/blog/:year/:month/:slug/", PostController, :view
     resources "/post", PostController
+    get "/tag/list", TagController, :list
     resources "/tag", TagController
   end
 
@@ -31,7 +32,7 @@ defmodule AhfiEx.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AhfiEx do
-  #   pipe_through :api
-  # end
+  #scope "/api", AhfiEx do
+#      pipe_through :api
+ # end
 end
